@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NORD STORE LAND</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Login Modal -->
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <h2>Acceso Administrador</h2>
+                <input type="password" id="adminPassword" placeholder="Contraseña de administrador">
+                <button onclick="adminLogin()">Ingresar</button>
+                <button onclick="closeModal()">Cancelar</button>
+            </div>
+        </div>
+
+        <!-- Main Page -->
+        <div id="mainPage">
+            <div class="gaming-particles"></div>
+            <header class="main-header">
+                <h1 class="main-title">
+                    <span class="nord-text">NORD</span>
+                    <span class="store-text">STORE</span>
+                    <span class="land-text">LAND</span>
+                </h1>
+                <div class="subtitle">Tu destino gaming y streaming</div>
+                <a id="adminLoginLink" href="#" onclick="showAdminLogin()" title="Login Administrador">
+                    <i class="fas fa-user-shield"></i> Admin
+                </a>
+            </header>
+            
+            <main class="main-content">
+                <div class="section-buttons">
+                    <button class="section-btn gaming-btn" onclick="goToGaming()">
+                        <div class="btn-background gaming-bg"></div>
+                        <div class="btn-content">
+                            <div class="btn-icon">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <h2>Nord Gaming</h2>
+                            <p>Productos para gaming</p>
+                            <div class="btn-glow"></div>
+                        </div>
+                    </button>
+                    
+                    <button class="section-btn streaming-btn" onclick="goToStreaming()">
+                        <div class="btn-background streaming-bg"></div>
+                        <div class="btn-content">
+                            <div class="btn-icon">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <h2>Nord Streaming</h2>
+                            <p>Plataformas de streaming</p>
+                            <div class="btn-glow"></div>
+                        </div>
+                    </button>
+                </div>
+            </main>
+        </div>
+
+        <!-- Gaming Section -->
+        <div id="gamingSection" class="section hidden">
+            <header>
+                <h1>Nord Gaming</h1>
+                <button onclick="goHome()">← Volver</button>
+                <button onclick="goToCart()" class="cart-btn">🛒 Carrito (<span id="cartCount">0</span>)</button>
+            </header>
+            
+            <div class="user-info-form">
+                <h3>Información del Cliente</h3>
+                <input type="text" id="gamingUserId" placeholder="ID del usuario" required>
+                <input type="text" id="gamingRegion" placeholder="Región" required>
+                <button onclick="validateGamingInfo()">Continuar</button>
+            </div>
+            
+                <div id="gamingProducts" class="products-grid hidden">
+                    <h3>Productos Disponibles</h3>
+                    <div id="gamingProductsList"></div>
+                </div>
+        </div>
+
+        <!-- Streaming Section -->
+        <div id="streamingSection" class="section hidden">
+            <header>
+                <h1>Nord Streaming</h1>
+                <button onclick="goHome()">← Volver</button>
+                <button onclick="goToCart()" class="cart-btn">🛒 Carrito (<span id="cartCountStreaming">0</span>)</button>
+            </header>
+            
+            <div id="streamingProducts" class="products-grid">
+                <h3>Plataformas de Streaming</h3>
+                <div id="streamingProductsList"></div>
+            </div>
+        </div>
+
+        <!-- Cart Section -->
+        <div id="cartSection" class="section hidden">
+            <header>
+                <h1>Carrito de Compras</h1>
+                <button onclick="goBack()">← Volver</button>
+            </header>
+            
+                <div id="cartContent">
+                    <div id="cartItems"></div>
+                    <div id="cartTotal"></div>
+                    
+                    <div class="payment-section">
+                        <h3>Métodos de Pago</h3>
+                        <div class="discount-section">
+                            <h4>Código de Descuento</h4>
+                            <input type="text" id="discountCode" placeholder="Ingresa tu código de descuento" maxlength="20">
+                            <button onclick="applyDiscount()" class="discount-btn">Aplicar Descuento</button>
+                            <div id="discountMessage" style="margin-top: 10px; font-weight: bold;"></div>
+                        </div>
+                        <div id="paymentMethods">
+                            <div class="yape-qr-container">
+                                <div class="yape-logo">YAPE</div>
+                                <div class="yape-qr-image">
+                                    <img src="YAPE.jpeg" alt="Código QR Yape" style="width: 200px; height: 200px; border-radius: 10px;">
+                                    <p style="color: black; font-weight: bold; margin-top: 10px;">Escanea para pagar</p>
+                                    <div class="phone-number" style="color: black; background: white; border: 2px solid #722F37;">912-888-255</div>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="processPayment()" class="pay-btn">Terminar Pago</button>
+                    </div>
+                </div>
+        </div>
+
+        <!-- Admin Section -->
+        <div id="adminSection" class="section hidden">
+            <header>
+                <h1>Panel de Administrador</h1>
+                <button onclick="logout()">Cerrar Sesión</button>
+            </header>
+            
+            <div class="admin-tabs">
+                <button onclick="showAdminTab('products')" class="tab-btn active">Productos</button>
+                <button onclick="showAdminTab('orders')" class="tab-btn">Pedidos</button>
+            </div>
+            
+            <!-- Products Management -->
+            <div id="adminProducts" class="admin-tab">
+                <div class="product-type-tabs">
+                    <button onclick="showProductType('gaming')" class="product-tab-btn active">Gaming</button>
+                    <button onclick="showProductType('streaming')" class="product-tab-btn">Streaming</button>
+                </div>
+                
+                <!-- Gaming Products Admin -->
+                <div id="adminGamingProducts" class="product-admin">
+                    <h3>Productos Gaming</h3>
+                    <div class="add-product-form">
+                        <input type="text" id="newGamingName" placeholder="Nombre del producto">
+                        <input type="number" id="newGamingPrice" placeholder="Precio (S/.)">
+                        <textarea id="newGamingDescription" placeholder="Descripción"></textarea>
+                        <button onclick="addGamingProduct()">Agregar Producto</button>
+                    </div>
+                    <div id="gamingProductsAdmin"></div>
+                </div>
+                
+                <!-- Streaming Products Admin -->
+                <div id="adminStreamingProducts" class="product-admin hidden">
+                    <h3>Productos Streaming</h3>
+                    <div class="add-product-form">
+                        <input type="text" id="newStreamingName" placeholder="Nombre del producto">
+                        <input type="number" id="newStreamingPrice" placeholder="Precio (S/.)">
+                        <input type="number" id="newStreamingStock" placeholder="Stock">
+                        <textarea id="newStreamingDescription" placeholder="Descripción"></textarea>
+                        <button onclick="addStreamingProduct()">Agregar Producto</button>
+                    </div>
+                    <div id="streamingProductsAdmin"></div>
+                </div>
+            </div>
+            
+            <!-- Orders Management -->
+            <div id="adminOrders" class="admin-tab hidden">
+                <h3>Gestión de Pedidos</h3>
+                <div id="ordersList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
