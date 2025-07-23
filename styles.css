@@ -1,4 +1,4 @@
-* {
+n* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -274,7 +274,7 @@ button:hover {
 .btn-content {
     position: relative;
     z-index: 3;
-    color: black;
+    color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     padding: 20px;
 }
@@ -728,7 +728,7 @@ button:hover {
 
 /* Order Styles */
 .order-card {
-    background: black;
+    background: white;
     border: 2px solid #e2e8f0;
     border-radius: 12px;
     padding: 20px;
@@ -910,10 +910,3 @@ button:hover {
     color: #c53030;
     border: 2px solid #feb2b2;
 }
-
-}
-#adminOrders h3 {
-    color: #222 !important;
-}
-
-
