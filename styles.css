@@ -928,7 +928,9 @@ button:hover {
 .add-product-form textarea,
 .add-product-form label,
 .admin-product-card p,
-.order-card p {
+.order-card p,
+.order-card li,
+.order-card span {
     color: #1a1a1a !important;
 }
 
@@ -944,5 +946,8 @@ button:hover {
 .order-card {
     background: #ffffff !important;
     color: #1a1a1a !important;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
 }
 
