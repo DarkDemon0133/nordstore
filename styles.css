@@ -917,37 +917,3 @@ button:hover {
 }
 
 
-/* Corrección de colores para pedidos y secciones claras */
-.admin-tab h3,
-.product-admin h3,
-.admin-product-card h4,
-.order-card h4,
-#adminOrders h4,
-#ordersList h4,
-.add-product-form input,
-.add-product-form textarea,
-.add-product-form label,
-.admin-product-card p,
-.order-card p,
-.order-card li,
-.order-card span {
-    color: #1a1a1a !important;
-}
-
-/* Asegura contraste en botones dentro de pedidos y productos */
-.add-product-form button,
-.admin-product-actions button,
-.order-actions button {
-    color: white !important;
-    font-weight: bold;
-}
-
-/* Fondo claro con texto oscuro para tarjetas de pedidos */
-.order-card {
-    background: #ffffff !important;
-    color: #1a1a1a !important;
-    border: 2px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 20px;
-}
-
