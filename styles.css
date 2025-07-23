@@ -12,7 +12,7 @@ body {
         radial-gradient(circle at 40% 80%, rgba(127, 255, 0, 0.1) 0%, transparent 50%),
         linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #0a0a0a 100%);
     min-height: 100vh;
-    color: #fff;
+    color: #000000;
     overflow-x: hidden;
 }
 
