@@ -20,17 +20,17 @@ function loadData() {
         const defaultGamingProducts = [
             {
                 id: 1,
-                name: 'Steam Wallet $10',
-                price: 35,
-                description: 'Recarga para Steam de $10 USD',
-                image: 'https://via.placeholder.com/300x200/1a1a2e/00ff7f?text=Steam+Wallet'
+                name: '78 DIAMANTES + 8 BONUS',
+                price: 4.5,
+                description: '86 DIAMANTES',
+                image: 'https://bonoxs.com/_next/image?url=https%3A%2F%2Fprod-bnx-public.s3.us-east-1.amazonaws.com%2Fmedia%2Fcatalog%2Fproduct%2Fm%2Fo%2Fmobilelegends_78_8diamantes.jpg&w=640&q=75'
             },
             {
                 id: 2,
-                name: 'Riot Points 1350 RP',
-                price: 25,
-                description: 'Riot Points para League of Legends',
-                image: 'https://via.placeholder.com/300x200/1a1a2e/00ff7f?text=RP+1350'
+                name: 'PASE SEMANAL',
+                price: 5.70,
+                description: 'Pase semanal Mobile Legends',
+                image: 'https://i.pinimg.com/736x/ec/9d/d3/ec9dd32c001ab51f4637a6d56b0e22e1.jpg'
             }
         ];
         localStorage.setItem('gamingProducts', JSON.stringify(defaultGamingProducts));
