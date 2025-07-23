@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NORD STORE LAND</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -80,10 +84,10 @@
                 <button onclick="validateGamingInfo()">Continuar</button>
             </div>
             
-                <div id="gamingProducts" class="products-grid hidden">
-                    <h3>Productos Disponibles</h3>
-                    <div id="gamingProductsList"></div>
-                </div>
+            <div id="gamingProducts" class="products-grid hidden">
+                <h3>Productos Disponibles</h3>
+                <div id="gamingProductsList"></div>
+            </div>
         </div>
 
         <!-- Streaming Section -->
@@ -107,31 +111,31 @@
                 <button onclick="goBack()">← Volver</button>
             </header>
             
-                <div id="cartContent">
-                    <div id="cartItems"></div>
-                    <div id="cartTotal"></div>
-                    
-                    <div class="payment-section">
-                        <h3>Métodos de Pago</h3>
-                        <div class="discount-section">
-                            <h4>Código de Descuento</h4>
-                            <input type="text" id="discountCode" placeholder="Ingresa tu código de descuento" maxlength="20">
-                            <button onclick="applyDiscount()" class="discount-btn">Aplicar Descuento</button>
-                            <div id="discountMessage" style="margin-top: 10px; font-weight: bold;"></div>
-                        </div>
-                        <div id="paymentMethods">
-                            <div class="yape-qr-container">
-                                <div class="yape-logo">YAPE</div>
-                                <div class="yape-qr-image">
-                                    <img src="YAPE.jpeg" alt="Código QR Yape" style="width: 200px; height: 200px; border-radius: 10px;">
-                                    <p style="color: black; font-weight: bold; margin-top: 10px;">Escanea para pagar</p>
-                                    <div class="phone-number" style="color: black; background: white; border: 2px solid #722F37;">912-888-255</div>
-                                </div>
+            <div id="cartContent">
+                <div id="cartItems"></div>
+                <div id="cartTotal"></div>
+                
+                <div class="payment-section">
+                    <h3>Métodos de Pago</h3>
+                    <div class="discount-section">
+                        <h4>Código de Descuento</h4>
+                        <input type="text" id="discountCode" placeholder="Ingresa tu código de descuento" maxlength="20">
+                        <button onclick="applyDiscount()" class="discount-btn">Aplicar Descuento</button>
+                        <div id="discountMessage" style="margin-top: 10px; font-weight: bold;"></div>
+                    </div>
+                    <div id="paymentMethods">
+                        <div class="yape-qr-container">
+                            <div class="yape-logo">YAPE</div>
+                            <div class="yape-qr-image">
+                                <img src="YAPE.jpeg" alt="Código QR Yape" style="width: 200px; height: 200px; border-radius: 10px;">
+                                <p style="color: black; font-weight: bold; margin-top: 10px;">Escanea para pagar</p>
+                                <div class="phone-number" style="color: black; background: white; border: 2px solid #722F37;">912-888-255</div>
                             </div>
                         </div>
-                        <button onclick="processPayment()" class="pay-btn">Terminar Pago</button>
                     </div>
+                    <button onclick="processPayment()" class="pay-btn">Terminar Pago</button>
                 </div>
+            </div>
         </div>
 
         <!-- Admin Section -->
