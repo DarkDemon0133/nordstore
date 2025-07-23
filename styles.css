@@ -274,7 +274,7 @@ button:hover {
 .btn-content {
     position: relative;
     z-index: 3;
-    color: white;
+    color: black;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     padding: 20px;
 }
@@ -728,7 +728,7 @@ button:hover {
 
 /* Order Styles */
 .order-card {
-    background: white;
+    background: black;
     border: 2px solid #e2e8f0;
     border-radius: 12px;
     padding: 20px;
@@ -909,4 +909,19 @@ button:hover {
     background: #fed7d7;
     color: #c53030;
     border: 2px solid #feb2b2;
+}
+/* Estilos para texto oscuro sobre fondos claros */
+.section,
+.add-product-form,
+.admin-tabs,
+.product-type-tabs,
+.admin-tab,
+.admin-product-card,
+.products-grid h3,
+.product-card,
+.product-card h4,
+.product-card .description,
+.product-card .price,
+.product-card .stock {
+    color: #1a1a1a !important; /* o usa #222, #4a5568 según gusto */
 }
